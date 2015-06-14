@@ -1,0 +1,233 @@
+html{
+
+}
+body{
+background-image: url("http://www.reaperswargaming.co.uk/weblogo1.png");
+background-color: #F0F0F5;
+background-repeat:no-repeat;
+background-position:center top;
+}
+.welcomeTitle{
+font-size:48px;
+margin-top: -5px;
+}
+.menuStrip{
+text-align: center;
+margin: 5px 5px 5px 5px;
+}
+.menuArea{
+margin: 0 auto;
+}
+.jumbotron {
+    background-color:rgba(0, 0, 0, 0);
+}
+.menuArea a{
+text-decoration: none;
+color: black;
+}
+.menuArea a:hover{
+opacity:0.7;
+}
+.button{
+background-color: #9C9C9C;
+padding: 7px 7px 7px 7px;
+display: inline-block;
+text-align: center;
+}
+.homeButton{
+background:url(homeBut.png);
+background-repeat:no-repeat;
+background-position:center top;
+width: 120px;
+height: 60px;
+font-size: 32px;
+}
+.calendarButton1{
+background:url(homeBut.png);
+background-repeat:no-repeat;
+background-position:center top;
+width: 120px;
+height: 60px;
+font-size: 32px;
+}
+.cssButton{
+	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dbdbdb), color-stop(1, #828282) );
+	background:-moz-linear-gradient( center top, #dbdbdb 5%, #828282 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dbdbdb', endColorstr='#828282');
+	background-color:#dbdbdb;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color: #828282;
+	font-family:arial;
+	font-size:25px;
+	font-weight:bold;
+	font-style:normal;
+	height:70px;
+	line-height:70px;
+	width:130px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #262526;
+	margin: 10px;
+}
+.cssButtonLarge{
+	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dbdbdb), color-stop(1, #828282) );
+	background:-moz-linear-gradient( center top, #dbdbdb 5%, #828282 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dbdbdb', endColorstr='#828282');
+	background-color:#dbdbdb;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color: #828282;
+	font-family:arial;
+	font-size:35px;
+	font-weight:bold;
+	font-style:normal;
+	height:90px;
+	line-height:90px;
+	width:180px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #262526;
+	margin: 10px;
+}
+.ticketsButton{
+background:url(homeBut.png);
+background-repeat:no-repeat;
+background-position:center top;
+width: 120px;
+height: 60px;
+font-size: 32px;
+}
+.venueButton{
+background:url(venueBut.png);
+background-repeat:no-repeat;
+background-position:center top;
+width: 120px;
+height: 60px;
+font-size: 32px;
+}
+.galleryButton{
+background:url(galBut.png);
+background-repeat:no-repeat;
+background-position:center top;
+width: 120px;
+height: 60px;
+font-size: 32px;
+}
+.contactButton{
+background:url(contBut.png);
+background-repeat:no-repeat;
+background-position:center top;
+width: 120px;
+height: 60px;
+font-size: 32px;
+}
+.largeButton{
+background:url(forumBut.png);
+background-repeat:no-repeat;
+background-position:center top;
+width: 175px;
+height: 80px;
+font-size: 48px;
+}
+.mainBody{
+padding: 35px 15px 15px 15px;
+text-align:center;
+}
+.chat{
+margin: 0 auto;
+width:65%;
+font-size: 16px;
+font-weight:bold;
+}
+.chat h3{
+font-size: 24px;
+text-decoration: underline;
+}
+.row p{
+color: #960012;
+}
+.inlineImage{
+display:inline-block;
+width:350px;
+padding: 40px 40px 40px 40px;
+font-weight:bold;
+}
+.inlineImage input{
+width:100%;
+height:100%;
+}
+.contact{
+text-align:center;
+}
+.contactTable{
+margin: 0px auto;
+width:80%;
+}
+.contactTable td{
+width:50%;
+height:300px;
+}
+.contactTable span{
+text-decoration: underline;
+color: black;
+font-weight:bold;
+font-size:24px;
+}
+.contactTable a:hover{
+Opacity: 0.7;
+}
+.contactCell{
+position:relative;
+}
+.contactCell:hover .overlayText{
+display:block;
+}
+.linkImg{
+max-width: 95%;
+height: 225px;
+position:relative;
+}
+.invictaLink{
+margin: 0 auto;
+width:300px;
+height: 200px;
+border-style: solid;
+border-width: 2px;
+border-radius: 25px;
+}
+.invictaLink:hover{
+opacity:0.7;
+}

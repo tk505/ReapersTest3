@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href="http://www.reaperswargaming.co.uk/favicon.ico" />
+    <title>@ViewBag.Title - Bexley Reapers Wargaming Club</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+  
+    <link href="~/Content/jquery.bxslider.css" rel="stylesheet" />
+    <style>
+        #linkAddImage{
+            background: none repeat scroll 0 0 green;
+            border-radius: 9px;
+            color: white;
+            padding: 4px 7px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var appInsights=window.appInsights||function(config){
+            function s(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},r=document,f=window,e="script",o=r.createElement(e),i,u;for(o.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",r.getElementsByTagName(e)[0].parentNode.appendChild(o),t.cookie=r.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)s("track"+i.pop());return config.disableExceptionTracking||(i="onerror",s("_"+i),u=f[i],f[i]=function(config,r,f,e,o){var s=u&&u(config,r,f,e,o);return s!==!0&&t["_"+i](config,r,f,e,o),s}),t
+        }({
+            instrumentationKey:"bbf4b1a1-c25e-44eb-b3de-9893f3bb249c"
+        });
+        
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Bexley Reapers Wargaming Club", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Calendar", "Calendar", "Home")</li>
+                    <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li>
+                    <li>@Html.ActionLink("Blog", "Blog", "Home")</li>
+                    <li>@Html.ActionLink("Forum", "Forum", "Home")</li>
+                    <li>@Html.ActionLink("Venue", "Venue", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Store", "Store", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+    
+</body>
+</html>

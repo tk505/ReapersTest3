@@ -1,0 +1,20 @@
+﻿@model ReapersTest3.Models.Gallery
+
+@{
+    ViewBag.Title = "Add Calendar Entry";
+}
+
+<h2>Add Calendar Entry</h2>
+
+@using (Html.BeginForm("addCalEntry", "Home", FormMethod.Post, new { enctype = "multipart/formdata" }))
+{ 
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Gallery</legend>
+        <input type="text" id="title" name="title" />
+        <input type="date" id="date" name="date" />
+        <input type="tel" id="location" name="location" />
+        <p><input type="submit" value="Save"/> </p>
+    </fieldset>
+}

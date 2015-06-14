@@ -1,0 +1,173 @@
+﻿    @model IEnumerable<ReapersTest3.Models.Gallery>
+
+<style type="text/css">
+    body {
+        padding: 0px;
+        margin: 0px;
+        font-family: Verdana;
+    }
+
+    #sliderContainer {
+        position: absolute;
+        padding: 0px;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    .box {
+        position: absolute;
+        width: 80%;
+        font-size: 50px;
+        text-align: center;
+        left: 150%;
+        margin-left: 0%;
+    }
+
+    #box1 {
+        left: 0%;
+    }
+
+    #sliderNav {
+        position: absolute;
+        margin: 0px 0px 20px 0px;
+        bottom: 0px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .page {
+        position: relative;
+        padding: 20px 20px 20px 20px;
+        z-index: 2;
+        background: #777777;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+
+    .pageHigh {
+        position: relative;
+        padding: 20px 20px 20px 20px;
+        z-index: 2;
+        background: #0066AA;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+
+    .move {
+        padding: 20px 20px 20px 20px;
+        z-index: 2;
+        background: #777777;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+
+        .move:hover {
+            background: #0066AA;
+        }
+
+    .left {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+    }
+
+    .right {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+    }
+</style>
+
+<script type="text/javascript" src="~/Scripts/jquery.2.1.3.min.js"></script>
+<script>
+    $(document).ready(function () { sliderInit() });
+    function sliderInit() {
+        var current = 1;
+        var duration = 150;
+        var containerSize = $('#sliderContainer div').length;
+
+        if (containerSize <= 1) {
+            $('#sliderNav').css('visibility', 'hidden');
+            $('#sliderLeft').css('visibility', 'hidden');
+            $('#sliderRight').css('visibility', 'hidden');
+            $('#sliderContainer').css('visibility', 'hidden');
+            return;
+        }
+
+        for (var i = 1; i <= containerSize; i++){
+            var id = 'page' + i;
+            var $pageIndex = $('<span/>');
+            $pageIndex.appendTo($('#sliderNav'));
+            $pageIndex.attr('id', id);
+            $pageIndex.append(i);
+            $pageIndex.addClass('page');
+            $pageIndex.click(function (o) { sliderClick(o.currentTarget.id.replace("page", "")); });
+
+            sliderButtons(current, containerSize);
+
+            $('.right').click(function () { sliderRight(); });
+            $('.left').click(function () { sliderLeft(); });
+
+            function sliderClick(o) {
+                if (o < current) for (var i = current; i > o; i--) sliderLeft();
+                else for (var i = current; i < o; i++) sliderRight();
+            }
+
+            function sliderRight() {
+                if (current >= containerSize) return;
+                var $box = $('#box' + current);
+                $box.animate({ left: '-150%' }, { duration: duration });
+                $box.next().animate({ left: '0%' }, { duration: duration });
+                sliderButtons(++current, containerSize);
+            }
+
+            function sliderLeft() {
+                if (current <= 1) return;
+                var $box = $('#box' + current);
+                $box.animate({ left: '150%' }, { duration: duration });
+                $box.prev().animate({ left: '0%' }, { duration: duration });
+                sliderButtons(--current, containerSize);
+            }
+
+            function sliderButtons(current, max) {
+                if (current == 1) $('#sliderLeft').css('visibility', 'hidden');
+                if (current == max) $('#sliderRight').css('visibility', 'hidden');
+                if (current > 1) $('#sliderLeft').css('visibility', 'visible');
+                if (current < max) $('#sliderRight').css('visibility', 'visible');
+                for (var i = 1; i <= max; i++) {
+                    var $page = $('#page' + i);
+                    if (i == current) $page.removeClass('page').addClass('pageHigh');
+                    else $page.removeClass('pageHigh').addClass('page');
+                }
+            }
+        }
+
+    }
+</script>
+
+<p>Gallery</p>
+<p>
+    @Html.ActionLink("Add Image", "AddImage", "Home")
+</p>
+<p>
+    @Html.ActionLink("Clear Gallery", "ClearGallery", "Home")
+</p>
+<div id="sliderNav"></div>
+<div id="sliderLeft" class="move left">&larr;</div>
+<div id="sliderRight" class=" move right">&rarr;</div>	
+<div id="sliderContainer">
+    
+        @{
+            int count = 0;
+        foreach (var image in Model)
+        { 
+            count++;
+            string s = "box"+count.ToString();
+                <div id="@s" class="box">
+                    <img src="@Url.Content(image.ImagePath)" />
+                </div>   
+        }
+        }
+    
+</div>
